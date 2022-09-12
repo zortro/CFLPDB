@@ -4,7 +4,8 @@ const wineSchema = new Schema({
     color: String,
     name: String,
     desc: String,
-    price: Number
+    price: Number,
+    year: Date
 })
 
 const Wine = model('wine', wineSchema)
