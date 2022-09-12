@@ -16,22 +16,3 @@ db.once('open', () => {
         console.log(`API server running on ${PORT}`)
     })
 })
-
-//example of posting
-app.post('/post', (req, res) => {
-    db.collection('test').insertOne({ title: "test" },
-    (err, results) => {
-        if (err) throw err
-        res.json(results)
-    })
-})
-
-//example of getting
-app.get('/get', (req, res) => {
-    db.collection('wine')
-    .find()
-    .toArray((err, results) => {
-        if (err) throw err
-        res.send(results)
-    })
-})
